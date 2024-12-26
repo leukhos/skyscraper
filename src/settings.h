@@ -182,6 +182,7 @@ private:
     void setFlag(const QString flag);
     QSet<QString> getKeys(CfgType type);
     QStringList parseFlags();
+    void reportInvalidPlatform();
 
     Settings *config;
     const QCommandLineParser *parser;

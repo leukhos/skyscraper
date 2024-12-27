@@ -84,8 +84,6 @@ private:
                              QString type = QString());
     int getPlatformId(const QString platform) override;
 
-    QString region;
-    QString lang;
     QJsonObject jsonObj;
 };
 

@@ -83,8 +83,6 @@ private:
                              const QString &locationKey, const QString &type);
     int getPlatformId(const QString platform) override;
 
-    QString region;
-    QString lang;
     QJsonObject jsonObj;
 };
 

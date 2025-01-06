@@ -241,6 +241,14 @@ void ScreenScraper::getSearchResults(QList<GameEntry> &gameEntries,
 
     jsonObj = jsonObj["response"].toObject()["jeu"].toObject();
 
+    auto romRegions = jsonObj["rom"]
+                          .toObject()["regions"]
+                          .toObject()["regions_shortname"]
+                          .toArray();
+    for (int i = romRegions.size() - 1; i >= 0; i--) {
+        regionPrios.prepend(romRegions[i].toString());
+    }
+
     GameEntry game;
     game.title = getJsonText(jsonObj["noms"].toArray(), REGION);
 
